@@ -19,14 +19,23 @@ Six stories that defined the day:
 
 Also noted: EU plans a €45bn loan for Ukraine, Fed minutes point to more rate rises, and Nvidia halts H-series chips to China.
 
+The entry is a single deterministic Python program (`main.py`, Pillow
+only, no network) that draws the front page from scratch: a navy
+masthead naming the day, GTA VI as the lead story, four more stories
+in a two-by-two grid, a Voyager 1 strip, and an "Also" line for the
+day's other headlines. Every illustration is drawn in code — sunset
+skyline, summit table, Gulf radar, Capitol dome, cyclone spiral,
+deep-space probe — so the image is fully self-contained.
+
 ## Run it
 
 ```sh
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
-This copies `entry.png` (1024x1024, PNG) to `$MAKEFUN_OUTPUT_DIR/entry.png`.
-Standard library only, no network, deterministic.
+This draws `entry.png` (1024x1024 PNG, under 1 MiB) to
+`$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output/entry.png`).
+Deterministic: two runs write byte-identical files.
 
 ---
 
